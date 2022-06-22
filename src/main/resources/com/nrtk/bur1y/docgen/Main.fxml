@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nrtk.bur1y.docgen.Controllers.MainController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Программа">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#toSettings" text="Настройки" />
+                  <MenuItem mnemonicParsing="false" onAction="#toHelp" text="Помощь" />
+              <MenuItem mnemonicParsing="false" text="О Программе" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Группа">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="selectGroup" disable="true" maxWidth="1.7976931348623157E308" onAction="#setGroup" prefWidth="150.0" promptText="Имя группы" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#importList" text="Экспорт списка" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;">
+         <children>
+            <Label text="ПМ">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="pm" disable="true" maxWidth="1.7976931348623157E308" onAction="#selectPM" prefWidth="150.0" promptText="ПМ" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="result" disable="true" mnemonicParsing="false" onAction="#resultPM" text="Оценки по ПМ">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="exam" disable="true" mnemonicParsing="false" onAction="#resultExam" text="Оценки за экзамен">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <DatePicker fx:id="dateExam" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Label text="Дата экзамена" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Комиссия">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+            <VBox maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ComboBox fx:id="chairman" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Председатель" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ComboBox fx:id="expert2" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Экзаменатор 2" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="expert3" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Экзаменатор 3" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="expert4" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Экзаменатор 4" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="expert5" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Экзаменатор 5" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="proto" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createProto" text="Протокол" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="vedom" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createVedom" text="Ведомость" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label text="Формат документа">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <RadioButton fx:id="doc" mnemonicParsing="false" onAction="#selectDoc" selected="true" text="doc" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin></RadioButton>
+                        <RadioButton fx:id="odt" mnemonicParsing="false" onAction="#selectOdt" text="odt" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin></RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
